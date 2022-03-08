@@ -20,13 +20,15 @@ public class Program {
 
 			st = conn.createStatement();
 
-			rs = st.executeQuery("SELECT p.id, p.descricao FROM tb_tipo_produto p");
+			rs = st.executeQuery("SELECT p.id, p.nome, p.ataque, p.defesa FROM tb_pokemon p");
 
 			System.out.println("Lista de Produtos.");
 
 			while (rs.next()) {
 				System.out.println("id : " + rs.getInt("id"));
-				System.out.println("descrição:" + rs.getString("descricao"));
+				System.out.println("nome do pokemon:" + rs.getString("nome"));
+				System.out.println("ataque: " +rs.getInt("ataque"));
+				System.out.println("defesa: "+rs.getInt("defesa"));
 				System.out.println("----------------------------------");
 			}
 
